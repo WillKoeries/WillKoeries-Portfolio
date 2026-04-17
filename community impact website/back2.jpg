@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="Css/home.css">   
+    <link rel="stylesheet" href="Css/hompepageE.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community Impact Initiatives</title>
+    <script src="Js/homepage.js" defer></script> 
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <ul>
+                <li><a href="HomePage.html">Home</a></li>
+                <li><a href="About.html">About Us</a></li>
+                <li><a href="Projects.html">Projects</a></li>
+                <li><a href="Volunteer.html">Volunteer</a></li>
+                <li><a href="Donation.html">Donations</a></li>
+                <li><a href="ContactUs.html">Contact Us</a></li>
+            </ul>
+            <img src="Images/Logo.png" alt="Logo" class="logo">
+        </nav>
+    </header>
+    
+    <main class="main-content" style="padding-top: 60px; text-align: center;">
+        <section>
+            <h1>Welcome to Community Impact Initiatives</h1>
+            <p>We are dedicated to improving education, health, and environmental sustainability in our community.</p>
+        </section>
+        
+        <section>
+            <h2>Our Impact</h2>
+            <div class="impact-container">
+                <div class="impact-card" id="education-card">
+                    <h3>Education</h3>
+                    <p>We provide resources and support to enhance educational opportunities for children and adults in our community.</p>
+                    <img src="Images/edu.jpg" alt="Education" class="impact-image" data-default="Images/edu.jpg" data-alternate="Images/ALT1.jpg">
+                </div>
+                <div class="impact-card" id="health-card">
+                    <h3>Healthcare</h3>
+                    <p>Our health programs focus on improving access to medical care and promoting healthy lifestyles.</p>
+                    <img src="Images/health.jpg" alt="Health" class="impact-image" data-default="Images/health.jpg" data-alternate="Images/ALT1.jpg">
+                </div>
+                <div class="impact-card" id="environment-card">
+                    <h3>Environment</h3>
+                    <p>We work towards environmental sustainability through conservation efforts and community clean-up projects.</p>
+                    <img src="Images/initiative.png" alt="Environment" class="impact-image" data-default="Images/initiative.png" data-alternate="Images/ALT1.png">
+                </div>
+            </div>
+        </section>
+        
+        <section class="get-involved">
+            <h2>Get Involved</h2>
+            <p>Join us in making a difference! Whether you want to volunteer, donate, or simply learn more about our initiatives, we welcome your support.</p>
+            <a href="Volunteer.html" class="btn">Volunteer</a>
+            <a href="Donation.html" class="btn">Donate</a>
+        </section>
+    </main>
+    
+    <footer class="footer">
+        <p>&copy; 2024 Community Impact Initiatives. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,36 @@
+
+function submitForm(event) {
+    event.preventDefault(); 
+
+    
+    const form = document.getElementById('donationForm');
+    const formData = new FormData(form);
+
+    
+    const donationData = {
+        name: formData.get('name'),
+        email: formData.get('email'),
+        phone: formData.get('phone'),
+        donationAmount: formData.get('donation'),
+        message: formData.get('message'),
+    };
+
+    
+    const dataString = `Name: ${donationData.name}\nEmail: ${donationData.email}\nPhone: ${donationData.phone}\nDonation Amount: ${donationData.donationAmount}\nMessage: ${donationData.message}\n\n`;
+
+    
+    const blob = new Blob([dataString], { type: 'text/plain' });
+
+    
+    const link = document.createElement('a');
+    link.href = URL.createObjectURL(blob);
+    link.download = 'donation.txt'; 
+
+    
+    document.body.appendChild(link);
+    link.click();
+
+    document.body.removeChild(link);
+    form.reset(); 
+    alert('Thank you for your donation! Your information has been saved as a text file.');
+}

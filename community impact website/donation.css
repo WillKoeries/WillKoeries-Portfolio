@@ -1,0 +1,145 @@
+main {
+    padding: 60px 20px;
+    font-family: 'Roboto', sans-serif;
+    max-width: 900px;
+    margin: auto;
+    color: #444;
+    background-color: #fafafa;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+    opacity: 0;
+    animation: fadeInContent 1.2s ease forwards;
+}
+
+main section {
+    margin-bottom: 40px;
+}
+
+h1, h2 {
+    color: #222;
+    text-align: center;
+    font-weight: 700;
+    opacity: 0;
+    animation: fadeInText 1.5s ease forwards;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 2rem;
+    text-decoration: none;
+    margin-bottom: 15px;
+}
+
+p {
+    text-align: justify;
+    line-height: 1.8;
+    font-size: 1rem;
+    color: #555;
+    opacity: 0;
+    animation: fadeInText 1.8s ease forwards;
+}
+
+
+.social-media {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: center; 
+    gap: 15px; 
+}
+
+.social-media li {
+    display: flex;
+    align-items: center; 
+}
+
+.social-icon {
+    width: 24px; 
+    height: auto; 
+    margin-right: 8px; 
+}
+
+.social-media a {
+    text-decoration: none; 
+    color: #333; 
+    font-size: 18px; 
+    transition: color 0.3s; 
+}
+
+.social-media a:hover {
+    color: #007bff; 
+}
+.footer {
+    padding: 1rem; 
+    background: #007BFF; 
+    color: white; 
+    width: 100%; 
+}
+
+.footer p {
+    text-align: center; 
+    margin: 0; 
+    padding: 0; 
+}
+
+html {
+    scroll-behavior: smooth;
+}
+.content {
+    text-align: center; 
+    margin-top: 20px; 
+}
+
+.content p {
+    text-align: center; 
+}
+
+
+@keyframes fadeInContent {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInText {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+a {
+    color: #333;
+    transition: color 0.3s ease-in-out;
+}
+
+a:hover {
+    color: #007bff;
+}
+
+@media (max-width: 768px) {
+    main {
+        padding: 40px 10px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+}

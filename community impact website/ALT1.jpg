@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="Css/education.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Environmental Sustainability - Community Impact Initiatives</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <ul>
+                <li><a href="HomePage.html">Home</a></li>
+                <li><a href="About.html">About Us</a></li>
+                <li><a href="Projects.html">Projects</a></li>
+                <li><a href="Volunteer.html">Volunteer</a></li>
+                <li><a href="Donation.html">Donations</a></li>
+                <li><a href="ContactUs.html">Contact Us</a></li>
+            </ul>
+            <img src="Images/Logo.png" alt="Logo" class="logo">
+        </nav>
+    </header>
+
+    <main class="contact-section" style="padding-top: 60px;">
+        <h1>Environmental Initiatives</h1>
+        <img src="Images/initiative.png" alt="Environmental Sustainability" style="width: 35%; max-width: 800px; height: auto; margin-bottom: 20px;">
+
+        <section>
+            <h2>Overview</h2>
+            <p>The Environmental Sustainability project focuses on promoting eco-friendly practices within our community. We organize activities like tree planting, recycling drives, and clean-up events to encourage responsible environmental stewardship. The project also includes educational programs to raise awareness about climate change and the importance of preserving natural resources.</p>
+        </section>
+
+        <section>
+            <h2>Goals</h2>
+            <ul>
+                <li>Reduce the community's carbon footprint.</li>
+                <li>Increase recycling rates and reduce waste.</li>
+                <li>Promote sustainable living practices.</li> 
+                <li>Reduce pollution through regular community clean-up events.</li>
+                <li>Educate the community on the importance of environmental conservation.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Impact</h2>
+            <p>Our efforts have led to the planting of over 1,000 trees and the recycling of tons of waste materials. Community participation in clean-up events has greatly increased, leading to cleaner, greener neighborhoods. Additionally, our educational programs have empowered individuals to adopt more sustainable habits in their daily lives.</p>
+        </section>
+
+        <section>
+            <h2>Future Plans</h2>
+            <p>We aim to expand our environmental programs to include renewable energy initiatives and water conservation projects. By partnering with local governments and businesses, we hope to create a more sustainable future for our community.</p>
+        </section>
+
+        <section>
+            <h2>How Can You Get Involved?</h2>
+            <p>We are always looking for passionate individuals who want to make a positive impact on the environment. Join us in our upcoming events, or consider donating to support our efforts.</p>
+            <p><strong><a href="ContactUs.html">Contact Us</a> to find out how you can help make our community greener!</strong></p>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2024 Community Impact Initiatives. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="Css/education.css">
+    <title>Healthcare Awareness - Community Impact Initiatives</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <ul>
+                <li><a href="HomePage.html">Home</a></li>
+                <li><a href="About.html">About Us</a></li>
+                <li><a href="Projects.html">Projects</a></li>
+                <li><a href="Volunteer.html">Volunteer</a></li>
+                <li><a href="Donation.html">Donations</a></li>
+                <li><a href="ContactUs.html">Contact Us</a></li>
+            </ul>
+            <img src="Images/Logo.png" alt="Logo" class="logo">
+        </nav>
+    </header>
+
+    <main class="contact-section" style="padding-top: 60px;">
+        <h1>Healthcare Initiatives</h1>
+        <img src="Images/health.jpg" alt="Healthcare Awareness" style="width: 35%; max-width: 800px; height: auto; margin-bottom: 20px;">
+
+        <section>
+            <h2>Overview</h2>
+            <p>The Health Awareness project is dedicated to improving the health and well-being of our community members. We organize free health check-ups, educational workshops, and provide resources for individuals to manage chronic conditions. Our mission is to ensure that everyone in our community has access to the knowledge and care they need to lead healthy lives.</p>
+        </section>
+
+        <section>
+            <h2>Goals</h2>
+            <ul>
+                <li>Provide free medical check-ups and screenings for underserved populations.</li>
+                <li>Raise awareness about preventable diseases and healthy lifestyle choices.</li>
+                <li>Support individuals with chronic conditions through education and resources.</li>
+                <li>Organize community health fairs and seminars.</li> 
+            </ul>
+        </section>
+
+        <section>
+            <h2>Impact</h2>
+            <p>Since its launch, the Health Awareness project has served over 2,000 individuals, offering free medical check-ups, vaccinations, and health education. We have partnered with local healthcare providers to ensure that our community members receive the best possible care and information.</p>
+        </section>
+
+        <section>
+            <h2>How Can You Get Involved?</h2>
+            <p>We are always looking for passionate individuals who want to make a positive impact on the health and well-being of our community. Join us in our upcoming health events, or consider donating to support our efforts.</p>
+            <p><strong><a href="ContactUs.html">Contact Us</a> to find out how you can help improve the health of our community!</strong></p>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; Community Impact Initiatives. All Rights Reserved.</p>
+    </footer>
+    
+</body>
+</html>

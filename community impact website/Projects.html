@@ -1,0 +1,20 @@
+document.addEventListener("DOMContentLoaded", function() {
+    const headings = document.querySelectorAll('.toggle-heading'); 
+
+    headings.forEach(heading => {
+        heading.addEventListener('click', () => {
+            const content = heading.nextElementSibling; 
+            if (content.style.display === 'block') {
+                content.style.display = 'none'; 
+            } else {
+                content.style.display = 'block'; 
+            }
+        });
+    });
+
+    
+    const contents = document.querySelectorAll('.content');
+    contents.forEach(content => {
+        content.style.display = 'none'; 
+    });
+});
