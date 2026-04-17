@@ -1,0 +1,173 @@
+package za.ac.mycput.studentenrolmentsystem.client.GUI;
+
+import za.ac.mycput.studentenrolmentsystem.Domain.User;
+import za.ac.cput.studentenrolmentsystem.common.Request;
+import za.ac.cput.studentenrolmentsystem.common.Response;
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+import java.io.*;
+import java.net.Socket;
+
+/**
+ *
+ * @author Aidan
+ */
+public class LoginGUI extends JFrame {
+
+    private JTextField usernameField;
+    private JPasswordField passwordField;
+    private JButton loginButton;
+    private JLabel statusLabel;
+
+    private final Color WINDOW_BG = new Color(240, 240, 240);
+
+    public LoginGUI() {
+        setTitle("Student Enrolment System - Login");
+        setSize(450, 500);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setLocationRelativeTo(null);
+        setResizable(false);
+
+        // Main panel 
+        JPanel mainPanel = new JPanel(new BorderLayout(15, 15));
+        mainPanel.setBorder(BorderFactory.createEmptyBorder(30, 40, 30, 40));
+
+        // Create a container panel for the title and status
+        JPanel topPanel = new JPanel(new BorderLayout());
+
+        // Welcome title label
+        JLabel welcomeLabel = new JLabel("Student Enrolment System", SwingConstants.CENTER);
+        welcomeLabel.setFont(new Font("Arial", Font.BOLD, 28));
+        welcomeLabel.setForeground(new Color(0, 51, 102));
+        welcomeLabel.setBorder(BorderFactory.createEmptyBorder(0, 0, 20, 0));
+        topPanel.add(welcomeLabel, BorderLayout.NORTH);
+
+        // Status label
+        statusLabel = new JLabel("", SwingConstants.CENTER);
+        statusLabel.setForeground(Color.RED);
+        statusLabel.setFont(new Font("Arial", Font.PLAIN, 12));
+        topPanel.add(statusLabel, BorderLayout.SOUTH);
+
+        mainPanel.add(topPanel, BorderLayout.NORTH);
+
+        // Form panel with horizontal layout for labels and fields
+        JPanel formPanel = new JPanel(new GridBagLayout());
+        GridBagConstraints gbc = new GridBagConstraints();
+        gbc.insets = new Insets(10, 10, 10, 10);
+        gbc.fill = GridBagConstraints.HORIZONTAL;
+
+        // User ID row
+        gbc.gridx = 0;
+        gbc.gridy = 0;
+        gbc.weightx = 0.3;
+        JLabel userLabel = new JLabel("User ID:");
+        userLabel.setFont(new Font("Arial", Font.BOLD, 12));
+        formPanel.add(userLabel, gbc);
+
+        gbc.gridx = 1;
+        gbc.gridy = 0;
+        gbc.weightx = 0.7; 
+        usernameField = new JTextField();
+        usernameField.setPreferredSize(new Dimension(200, 35));
+        usernameField.setFont(new Font("Arial", Font.PLAIN, 14));
+        formPanel.add(usernameField, gbc);
+
+        // Password row
+        gbc.gridx = 0;
+        gbc.gridy = 1;
+        gbc.weightx = 0.3;
+        JLabel passwordLabel = new JLabel("Password:");
+        passwordLabel.setFont(new Font("Arial", Font.BOLD, 12));
+        formPanel.add(passwordLabel, gbc);
+
+        gbc.gridx = 1;
+        gbc.gridy = 1;
+        gbc.weightx = 0.7;
+        passwordField = new JPasswordField();
+        passwordField.setPreferredSize(new Dimension(200, 35));
+        passwordField.setFont(new Font("Arial", Font.PLAIN, 14));
+        formPanel.add(passwordField, gbc);
+
+        // Login button 
+        gbc.gridx = 0;
+        gbc.gridy = 2;
+        gbc.gridwidth = 2; // Span both columns
+        gbc.insets = new Insets(20, 10, 10, 10);
+        gbc.weightx = 1.0;
+        gbc.anchor = GridBagConstraints.CENTER;
+        gbc.fill = GridBagConstraints.NONE; 
+        loginButton = new JButton("Login");
+        loginButton.setPreferredSize(new Dimension(140, 40)); 
+        loginButton.setFont(new Font("Arial", Font.BOLD, 14));
+        loginButton.setBackground(new Color(0, 102, 204));
+        loginButton.setForeground(Color.WHITE);
+        loginButton.setFocusPainted(false);
+        loginButton.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        formPanel.add(loginButton, gbc);
+
+        mainPanel.add(formPanel, BorderLayout.CENTER);
+
+        // Default credentials panel
+        JPanel credentialsPanel = new JPanel(new GridLayout(3, 1, 8, 8));
+        credentialsPanel.setBorder(BorderFactory.createCompoundBorder(
+                BorderFactory.createTitledBorder("Default credentials:"),
+                BorderFactory.createEmptyBorder(5, 10, 5, 10)
+        ));
+        credentialsPanel.add(new JLabel("Admin: admin/admin123", SwingConstants.CENTER));
+        credentialsPanel.add(new JLabel("Student: student1/student123", SwingConstants.CENTER));
+        mainPanel.add(credentialsPanel, BorderLayout.SOUTH);
+
+        add(mainPanel);
+
+        // Add action listeners
+        loginButton.addActionListener(e -> attemptLogin());
+
+        // key listener 
+        passwordField.addActionListener(e -> attemptLogin());
+    }
+
+    private void attemptLogin() {
+        String username = usernameField.getText().trim();
+        String password = new String(passwordField.getPassword()).trim();
+
+        if (username.isEmpty() || password.isEmpty()) {
+            statusLabel.setText("Please enter User ID and Password.");
+            return;
+        }
+
+        try (Socket socket = new Socket("localhost", 12345)) {
+            ObjectOutputStream out = new ObjectOutputStream(socket.getOutputStream());
+            ObjectInputStream in = new ObjectInputStream(socket.getInputStream());
+
+            User user = new User(username, password, null);
+            out.writeObject(new Request("LOGIN", user));
+            out.flush();
+
+            Response response = (Response) in.readObject();
+
+            if (response.isSuccess()) {
+                User loggedIn = (User) response.getData();
+                statusLabel.setText("Login successful as " + loggedIn.getRole());
+                dispose(); // closing login window
+
+                if (loggedIn.getRole().equalsIgnoreCase("admin")) {
+                    new Admin(loggedIn).setVisible(true);
+                } else {
+                    new Student(loggedIn).setVisible(true);
+                }
+            } else {
+                statusLabel.setText("" + response.getMessage());
+            }
+
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            statusLabel.setText("Connection failed: " + ex.getMessage());
+        }
+    }
+
+    public static void main(String[] args) {
+        SwingUtilities.invokeLater(() -> new LoginGUI().setVisible(true));
+    }
+}
