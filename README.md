@@ -39,7 +39,7 @@ Or download and open individual project files locally.
 ---
 
 ## 📫 Contact
-- **Email:** 240160711your@mycput.ac.za
+- **Email:** 240160711@mycput.ac.za
 - **Student number:** 240160711
 
 ---
