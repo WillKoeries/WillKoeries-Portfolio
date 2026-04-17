@@ -18,8 +18,8 @@
 Professional multi-page portfolio site.  
 **Tech:** HTML, CSS, JavaScript
 
-### 2. 🌍 Community Impact NGO Website
-**Location:** `/community-impact-ngo/`  
+### 2. 🌍 Community Impact Website
+**Location:** `/community-impact-website/`  
 **Type:** Group Project  
 Multi-page NGO website with forms and animations.  
 **Tech:** HTML, CSS, JavaScript
