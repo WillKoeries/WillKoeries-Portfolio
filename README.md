@@ -1,4 +1,4 @@
-# Will Koeries - Developer Portfolio
+# Will Koeries - Portfolio
 
 **CPUT Information Technology Student | 240160711
 
