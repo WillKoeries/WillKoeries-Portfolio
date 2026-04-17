@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Will Koeries</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="about-header">
+            <h2>About Me</h2>
+            <hr class="divider">
+        </div>
+        <div class="about-content">
+            <div class="about-text">
+                <p>Hello! My name is Will Koeries, and I’m an IT student with a passion for technology and problem-solving. I specialize in web development, coding, and network troubleshooting, with experience in HTML, CSS, JavaScript, and Python.</p>
+
+                <p>I have a background in web development with a strong focus on frontend and backend technologies. I also provide IT support and work on projects involving data analysis and network troubleshooting.</p>
+
+                <p>My goal is to continuously improve my skills, contribute to innovative projects, and explore the latest advancements in technology. I’m passionate about using my technical abilities to solve real-world problems and eager to take on new challenges.</p>
+
+                <p>When I’m not coding, I enjoy exploring new technologies, learning more about cybersecurity, or helping others solve their IT problems.</p>
+
+                <p>Let’s build something amazing together!</p>
+            </div>
+
+            <div class="about-image">
+                <img src="me.jpg" alt=" Will Koeries's profile photo">
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2024  Will Koeries's Portfolio. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
